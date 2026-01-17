@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>Sana… 💙</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  body {
+    margin: 0;
+    background: #cfefff;
+    overflow: hidden;
+    font-family: "Segoe UI", sans-serif;
+  }
+
+  .butterfly {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: radial-gradient(circle, #6bb8ff 40%, #2b74d9 70%);
+    border-radius: 50%;
+    opacity: 0;
+    animation: fly 3.5s ease-in-out forwards;
+  }
+
+  #b2 { animation-delay: 0.6s; }
+
+  @keyframes fly {
+    0% {
+      transform: translate(-120px, 100vh) scale(0.3);
+      opacity: 0;
+    }
+    100% {
+      transform: translate(15vw, 25vh) scale(1);
+      opacity: 1;
+    }
+  }
+
+  #videoBox {
+    position: absolute;
+    top: 20%;
+    left: 8%;
+    display: none;
+    align-items: center;
+    gap: 20px;
+  }
+
+  video {
+    width: 300px;
+    border-radius: 18px;
+    box-shadow: 0 12px 35px rgba(0,0,0,0.25);
+    cursor: pointer;
+  }
+
+  #text {
+    max-width: 420px;
+    font-size: 15px;
+    color: #033;
+    line-height: 1.6;
+    opacity: 0;
+  }
+
+  .showText {
+    animation: fadeIn 2s forwards;
+  }
+
+  @keyframes fadeIn {
+    to { opacity: 1; }
+  }
+
+  .heart {
+    color: red;
+    font-size: 20px;
+  }
+</style>
+</head>
+<body>
+
+<div class="butterfly" id="b1"></div>
+<div class="butterfly" id="b2"></div>
+
+<div id="videoBox">
+  <video id="video" playsinline>
+    <source src="video.mp4.mov" type="video/mp4">
+  </video>
+
+  <div id="text">
+    Ne kadar uzak olsak da, birbirimize bedenen dokunup göremesek de aslında yan yana birlikteyiz.  
+    Seninle hayal kurmaya devam ediyorum her gün. Ne zaman geleceğini bilmesem de takvime çarpı atıyorum her gün.  
+    Seni çok özledim, seni gerçekten çok özledim ve gelmeni öyle çok istiyorum ki...  
+    Seni erken gelmeye ikna edene kadar soracağım ne zaman geliyorsun diye.  
+    İçinde endişe de olmasın asla, değil 5 ay sonunda mutlu olacağımıza, beraber olacağımıza inandığım süre boyunca beklerim.  
+    Sana, kendime ve bize çok güveniyorum. Uzak mesafenin sonunda sabahları beraber uyanacağımıza eminim.  
+    Lütfen sinirlenme biliyorum, anlıyorum durum çok zor insan yan yana olup nefesini duymak istiyor ama heyecanla bekle görüşeceğimiz günü.  
+    <br><br><strong>SENİ ÇOOOOK SEVİYORUUUM ASKKIIIIIMMMM...</strong> <span class="heart">❤</span>
+  </div>
+</div>
+
+<audio id="music" src="Gokhan-Turkmen-Ask-2.mp3"></audio>
+
+<script>
+  setTimeout(() => {
+    document.getElementById("videoBox").style.display = "flex";
+  }, 3000);
+
+  const video = document.getElementById("video");
+  const music = document.getElementById("music");
+  const text = document.getElementById("text");
+
+  video.addEventListener("click", () => {
+    video.play();
+    music.play();
+    text.classList.add("showText");
+  });
+</script>
+
+</body>
+</html>
